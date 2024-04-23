@@ -14,7 +14,7 @@ namespace CleanArchMvc.WebUI.Controllers
         public async Task<IActionResult> Index()
         {
             var produtcs = await _productService.GetProducts();
-            return View();
+            return View(produtcs);
         }
     }
 }
