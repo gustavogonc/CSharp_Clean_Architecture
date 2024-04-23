@@ -24,7 +24,7 @@ namespace CleanArchMvc.Application.Products.Handlers
             else
             {
                 product.Update(request.Name, request.Description, request.Price, request.Stock, request.Image, request.CategoryId);
-                return await _productRepository.UpdateAsync(product););
+                return await _productRepository.UpdateAsync(product);
             }
         }
     }
