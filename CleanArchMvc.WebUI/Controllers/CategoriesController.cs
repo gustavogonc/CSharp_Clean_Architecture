@@ -55,5 +55,25 @@ namespace CleanArchMvc.WebUI.Controllers
 
             return View(categoryDto);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(CategoryDTO categoryDto)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    await _categoryService.Update(categoryDto);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+                return RedirectToAction(nameof(Index));
+            }
+            return View(categoryDto);
+        }
     }
 }
