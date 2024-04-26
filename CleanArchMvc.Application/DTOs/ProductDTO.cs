@@ -12,7 +12,7 @@ namespace CleanArchMvc.Application.DTOs
         [Required(ErrorMessage = "The Name is Required")]
         [MinLength(3)]
         [MaxLength(100)]
-        [DisplayName("Description")]
+        [DisplayName("Name")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "The Description is Required")]
@@ -37,10 +37,8 @@ namespace CleanArchMvc.Application.DTOs
         [MaxLength(250)]
         [DisplayName("Product Image")]
         public string Image { get; set; }
-
-        public Category Category { get; set; }
-        [DisplayName("Categories")]
-        public int CategoryId { get; set;
-        }
+        [DisplayName("Category Id")]
+        public int CategoryId { get; set;}
+        public Category? Category { get; set; }
     }
 }
