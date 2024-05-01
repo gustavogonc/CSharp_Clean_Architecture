@@ -24,6 +24,9 @@ namespace CleanArchMvc.Infra.IoC
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.ConfigureApplicationCookie(options =>
+            options.AccessDeniedPath = "/Account/Login");
+
             services.AddScoped<IAuthenticate, AuthenticateService>();
             services.AddScoped<ISeedUserRoleInitial, SeedUserRoleInitial>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
