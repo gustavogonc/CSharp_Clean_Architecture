@@ -4,16 +4,16 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArchMvc.WebUI.Controllers
 {
-    public class AcountController : Controller
+    public class AccountController : Controller
     {
         private readonly IAuthenticate _authentication;
-        public AcountController(IAuthenticate authentication)
+        public AccountController(IAuthenticate authentication)
         {
             _authentication = authentication;
         }
 
         [HttpGet]
-        public IActionResult Login(string returnUrl)
+        public IActionResult Login(string? returnUrl)
         {
             return View(new LoginViewModel()
             {
